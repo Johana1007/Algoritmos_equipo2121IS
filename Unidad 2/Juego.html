@@ -1,0 +1,66 @@
+<script>
+
+    var nombre = prompt("Ingresa tu nombre");
+    
+    var transporte = ["Apache","Bicicleta","Bocho","Maclaren","F1","Caminando","Camioneta","Chevi","Porche","Mini Cuper"];
+    var viaje = ["Cancun","Francia","Puertorico","Cuba","Alemania","Oaxaca","Con tu vecina","Dos cuadras adelante de donde vives","A la central de abastos","CDMX"];
+    var esposa = ["Sofia","Martha","Monica","Lupe","Guadalupe","Brenda","Itzel","Abigail","Veronica","Tania"];
+    var hijos = ["1 hijo","2 hijos","3 hijos","4 hijos","5 hijos","6 hijos","7 hijos","8 hijos","9 hijos","10 hijos"];
+    var trabajo = ["doctora",  "Licenciada", "Abogada", "Dentista", "Enfermera"];
+    var nacionalidad = ["mexicana", " española", "italiana", "francesa", "chilena" ];
+    var lugar = ["jardin", "salon", "casa", "hacienda", "terraza"];
+    var vivienda = ["casa", "departamento", "mansion", "penthouse", "hotel" ];
+    var comida = ["pasta", "crema", "cortes", "sushi", "mariscos" ];
+    var invitaciones = ["elegantes", "clasicas", "informales", "con texturas", "tematicas"];
+     
+    
+    
+    console.log(nombre)
+    
+    for(var i = 0; i < 1; i++) {
+        let conjunto = juego();
+        console.log(conjunto);
+    
+    }
+    
+    function juego() {
+        let transporteNuevo = transporte[numeroAleatorio(0,transporte.length-1)];
+        let viajeNuevo = viaje[numeroAleatorio(0,viaje.length-1)];
+        let esposaNueva = esposa[numeroAleatorio(0,esposa.length-1)];
+        let trabajoNuevo = trabajo[numeroAleatorio(0,trabajo.length-1)];
+        let nacionalidadNueva = nacionalidad[numeroAleatorio(0,nacionalidad.length-1)];
+        let lugarNuevo = lugar[numeroAleatorio(0,lugar.length-1)];
+        let viviendaNueva = vivienda[numeroAleatorio(0,vivienda.length-1)];
+        let comidaNueva = comida[numeroAleatorio(0,comida.length-1)];
+        let invitacionesNueva = invitaciones[numeroAleatorio(0,esposa.length-1)];
+        let hijosNuevos = numeroAleatorio(1,21);
+      //  let condigoNuevo = generarCodigo(10);
+        let persona ={
+            transportes: transporteNuevo,
+            viajes: viajeNuevo,
+            esposas: esposaNueva,
+            hijo: hijosNuevos,
+            trabajo: trabajoNuevo,
+            nacionalidad:nacionalidadNueva,
+            lugar:lugarNuevo,
+            vivienda:viviendaNueva,
+            comida: comidaNueva,
+            invitaciones: invitacionesNueva,
+    
+      //      codigo: condigoNuevo
+        }
+        return persona;
+    }
+    function numeroAleatorio (min,max) {
+       return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function genrarCodigo(n) {
+        let Cadena = "";
+        for ( var i = 0; i < n; i++){
+            Cadena = Cadena + letras [numeroAleatorio(0,letras.length-1)];
+        }
+        return Cadena;
+    }
+    
+    
+    </script>
