@@ -1,0 +1,13 @@
+<script>
+    //Generar n palabras de n tamaño segun el usuario ingrese el numero
+    var num = prompt("Ingrese el numero de palabras que desea generar");
+    var letras = ["a","b","m","c","m","d","e","f"];
+    
+    for (var i = 0; i < num; i++) {    
+        var palabra = "";
+        for (var p = 0; p < num; p++) {
+            palabra = palabra + letras[Math.floor(Math.random())];                 
+        }
+        console.log(palabra);        
+    }
+    </script>

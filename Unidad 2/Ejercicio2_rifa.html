@@ -1,0 +1,39 @@
+<script>
+// ejercicio 2 pedir al usuario una cantidad de participantes, posteriormente ingresar la informacion de cada participante (nombre y direccion)
+// Realizar 3 sorteos para elejir el ganador, es el que salga a la tercera vez.
+var integrantes = prompt("Ingresa el numero de participantes")
+
+var nombre = ["Jesed","Luis","Erick"];
+var direccion = ["avenida 15 de jose maria morelos y pavon","Condomino 7 lote C","Avenida josefa ortiz de dominguez numero2 "];
+var Resultado = ["Perdedor","Ganador","Perdedor"];
+
+for(var i = 0; i < 3; i++) {
+    let suerte = rifa();
+    console.log(suerte);
+}
+
+function rifa(integrantes) {
+    let nombreNuevo = nombre[numeroAleatorio(0,nombre.length-1)];
+    let ResultadoNuevo = Resultado[numeroAleatorio(0,Resultado.length-1)];
+    let direccionNueva = direccion[numeroAleatorio(0,direccion.length-1)]; 
+
+    let persona ={
+        nombres: nombreNuevo,
+        direcciones: direccionNueva,
+        Resultados: ResultadoNuevo,
+    }
+    return persona;
+}
+
+function numeroAleatorio (min,max) {
+   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generarCodigo(n) {
+    let Cadena = "";
+    for ( var i = 0; i < n; i++){
+        Cadena += direccion[numeroAleatorio(0,direccion.length-1)];
+    }
+    return Cadena;
+}
+</script>
